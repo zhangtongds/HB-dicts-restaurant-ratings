@@ -25,11 +25,23 @@ def sorted_restaurant_rating(restaurant_ratings):
         print "{} is rated at {}.".format(restaurant, rating)
 
 def add_ratings(restaurant_ratings):
+    nums = [1, 2, 3, 4, 5]
     restaurant_name = raw_input("Please input a restaurant name: ")
     rating = raw_input("Please input rating for {}: ".format(restaurant_name))
+    while True:
+        try:
+            if rating in nums:
+                restaurant_ratings[restaurant_name] = rating
+                break
+        except:
+            print "Please enter a rating between 1-5: "
+            
 
-    restaurant_ratings[restaurant_name] = rating
 
+            # rating = raw_input("Please input rating for {}: ".format(restaurant_name))
+            #     if rating in nums:
+            #         restaurant_ratings[restaurant_name] = rating
+            #         break
 
 # add_ratings()
 # restaurant_rating(sys.argv[1])
