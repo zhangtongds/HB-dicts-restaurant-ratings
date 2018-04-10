@@ -30,11 +30,14 @@ def add_ratings(restaurant_ratings):
     rating = raw_input("Please input rating for {}: ".format(restaurant_name))
     while True:
         try:
-            if rating in nums:
+            if int(rating) in nums:
                 restaurant_ratings[restaurant_name] = rating
                 break
-        except:
-            print "Please enter a rating between 1-5: "
+            else:
+                rating = raw_input("Please enter a rating between 1-5: ")
+        except ValueError:
+            rating = raw_input("Please enter a number.")
+            
             
 
 
